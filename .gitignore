@@ -1,0 +1,21 @@
+# Private AI/LLM instruction and prompt files
+*CONTRACT*.md
+*contract*.md
+*INSTRUCTION*.md
+*instruction*.md
+*PROMPT*.md
+*prompt*.md
+*AGENT*.md
+*agent*.md
+*.prompt
+*.instructions
+
+# Secrets and local environment
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
