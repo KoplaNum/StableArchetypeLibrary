@@ -19,3 +19,6 @@
 *.pfx
 credentials*.json
 secrets*.json
+
+# Local backup folders (do not publish)
+backups/

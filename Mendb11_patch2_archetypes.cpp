@@ -27,12 +27,8 @@
   #if __has_include(<torch/torch.h>) && __has_include(<torch/script.h>)
     #include <torch/torch.h>
     #include <torch/script.h>
-  #elif __has_include("D:/libtorch-win-shared-with-deps-2.4.0+cu124/libtorch/include/torch/csrc/api/include/torch/torch.h") && \
-        __has_include("D:/libtorch-win-shared-with-deps-2.4.0+cu124/libtorch/include/torch/script.h")
-    #include "D:/libtorch-win-shared-with-deps-2.4.0+cu124/libtorch/include/torch/csrc/api/include/torch/torch.h"
-    #include "D:/libtorch-win-shared-with-deps-2.4.0+cu124/libtorch/include/torch/script.h"
   #else
-    #error "LibTorch headers not found."
+    #error "LibTorch headers not found. Add LibTorch include paths to your compiler settings (libtorch/include and libtorch/include/torch/csrc/api/include)."
   #endif
 #else
   #include <torch/torch.h>
