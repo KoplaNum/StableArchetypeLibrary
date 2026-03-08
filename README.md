@@ -111,3 +111,13 @@ You can also change `/OUT:` to produce separate DLL names, for example:
 
 - Designed for iterative experimentation with neural visual behavior.
 - Baseline and patch variants allow side-by-side comparison without modifying the stable implementation.
+
+## License
+
+This project is licensed under the MIT License. See `LICENSE`.
+
+## Third-Party Legal Notes
+
+This repository depends on third-party SDKs/libraries (Zorro SDK, LibTorch, CUDA, OpenCL/OpenGL, MSVC toolchain) that are licensed separately. See `THIRD_PARTY_NOTICES.md`.
+
+When distributing binaries, ensure you include all required third-party notices/licenses as required by those dependencies.

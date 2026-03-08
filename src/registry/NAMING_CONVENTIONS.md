@@ -12,24 +12,24 @@ This document defines the proper variable naming for all 100 equations based on 
 
 | Symbol | Scientific Name | C++ Variable Name | Description |
 |--------|----------------|-------------------|-------------|
-| $\mathfrak{A}$ | archetypeLibrary | `archetypeLibrary` | Full library of archetype operators |
-| $\mathcal{A}_k$ | archetypeOperator | `archetypeOperator[k]` | k-th archetype neural operator |
-| $K$ | libraryCardinality | `libraryCardinality` | Number of archetypes in library |
-| $\Theta_k$ | archetypeParameterSet | `archetypeParams[k]` | Parameter tuple for archetype k |
-| $W_k^{(1)}$ | firstLayerWeights | `firstLayerWeights[k]` | Layer 1 weight matrix for archetype k |
-| $b_k^{(1)}$ | firstLayerBiases | `firstLayerBiases[k]` | Layer 1 bias vector for archetype k |
-| $W_k^{(2)}$ | secondLayerWeights | `secondLayerWeights[k]` | Layer 2 weight matrix for archetype k |
-| $b_k^{(2)}$ | secondLayerBiases | `secondLayerBiases[k]` | Layer 2 bias vector for archetype k |
-| $\Theta$ | globalParameterLibrary | `globalParamLibrary` | Union of all archetype parameters |
+| `A` | archetypeLibrary | `archetypeLibrary` | Full library of archetype operators |
+| `A_k` | archetypeOperator | `archetypeOperator[k]` | k-th archetype neural operator |
+| `K` | libraryCardinality | `libraryCardinality` | Number of archetypes in library |
+| `Theta_k` | archetypeParameterSet | `archetypeParams[k]` | Parameter tuple for archetype k |
+| `W_k^(1)` | firstLayerWeights | `firstLayerWeights[k]` | Layer 1 weight matrix for archetype k |
+| `b_k^(1)` | firstLayerBiases | `firstLayerBiases[k]` | Layer 1 bias vector for archetype k |
+| `W_k^(2)` | secondLayerWeights | `secondLayerWeights[k]` | Layer 2 weight matrix for archetype k |
+| `b_k^(2)` | secondLayerBiases | `secondLayerBiases[k]` | Layer 2 bias vector for archetype k |
+| `Theta` | globalParameterLibrary | `globalParamLibrary` | Union of all archetype parameters |
 
 ### Dimensional Constants
 
 | Symbol | C++ Name | Value | Description |
 |--------|----------|-------|-------------|
-| $d_s$ | `spatialDim` | 2 | Spatial input dimension |
-| $d_c$ | `contextDim` | 4 | Context input dimension |
-| $d_o$ | `outputDim` | 3 | Output color dimension |
-| $d_h$ | `hiddenDim` | 16 | Hidden layer width |
+| `d_s` | `spatialDim` | 2 | Spatial input dimension |
+| `d_c` | `contextDim` | 4 | Context input dimension |
+| `d_o` | `outputDim` | 3 | Output color dimension |
+| `d_h` | `hiddenDim` | 16 | Hidden layer width |
 
 ---
 
@@ -39,23 +39,23 @@ This document defines the proper variable naming for all 100 equations based on 
 
 | Symbol | Scientific Name | C++ Variable Name | Description |
 |--------|----------------|-------------------|-------------|
-| $\mathbf{c}_t$ | semanticContextVector | `contextVector` | 4D semantic context at time t |
-| $c_t^{(r)}$ | regimeState | `regimeState` | Regime component of context |
-| $c_t^{(v)}$ | volatilityState | `volatilityState` | Volatility component of context |
-| $c_t^{(\tau)}$ | trendState | `trendState` | Trend component of context |
-| $c_t^{(\rho)}$ | riskState | `riskState` | Risk component of context |
+| `c_t` | semanticContextVector | `contextVector` | 4D semantic context at time t |
+| `c_t^(r)` | regimeState | `regimeState` | Regime component of context |
+| `c_t^(v)` | volatilityState | `volatilityState` | Volatility component of context |
+| `c_t^(tau)` | trendState | `trendState` | Trend component of context |
+| `c_t^(rho)` | riskState | `riskState` | Risk component of context |
 
 ### Dynamical Parameters
 
 | Symbol | C++ Name | Description |
 |--------|----------|-------------|
-| $a_r, b_r$ | `regimeAmp1`, `regimeAmp2` | Regime oscillation amplitudes |
-| $\omega_r, \nu_r$ | `regimeFreq1`, `regimeFreq2` | Regime oscillation frequencies |
-| $\eta_t^{(q)}$ | `signedNoise[q]` | Signed stochastic excitation |
-| $u_t^{(q)}$ | `unitRandom[q]` | Unit-interval random driver |
-| $\bar{w}_{1,t}$ | `firstLayerMeanWeight` | Mean of first layer weights |
-| $\bar{w}_{2,t}$ | `secondLayerMeanWeight` | Mean of second layer weights |
-| $\bar{m}_t$ | `globalWeightMagnitude` | Global parameter magnitude statistic |
+| `a_r, b_r` | `regimeAmp1`, `regimeAmp2` | Regime oscillation amplitudes |
+| `omega_r, nu_r` | `regimeFreq1`, `regimeFreq2` | Regime oscillation frequencies |
+| `eta_t^(q)` | `signedNoise[q]` | Signed stochastic excitation |
+| `u_t^(q)` | `unitRandom[q]` | Unit-interval random driver |
+| `wbar_1,t` | `firstLayerMeanWeight` | Mean of first layer weights |
+| `wbar_2,t` | `secondLayerMeanWeight` | Mean of second layer weights |
+| `mbar_t` | `globalWeightMagnitude` | Global parameter magnitude statistic |
 
 ---
 
@@ -65,13 +65,13 @@ This document defines the proper variable naming for all 100 equations based on 
 
 | Symbol | Scientific Name | C++ Variable Name | Description |
 |--------|----------------|-------------------|-------------|
-| $\Omega$ | spatialDomain | `spatialDomain` | 2D pixel grid domain |
-| $(i, j)$ | pixelCoords | `pixelCoords` | Integer pixel coordinates |
-| $(x_p, y_p)$ | normalizedCoords | `normalizedCoords` | Normalized coordinates in [-1, 1] |
-| $r_p$ | radialDistance | `radialDistance` | Radial distance from center |
-| $\vartheta_p$ | polarAngle | `polarAngle` | Angular position (atan2) |
-| $v_p$ | vignetteFactor | `vignetteFactor` | Radial falloff multiplier |
-| $\mathbf{g}_p$ | geometricFeatureVector | `geometricFeatures` | Complete geometric descriptor |
+| `Omega` | spatialDomain | `spatialDomain` | 2D pixel grid domain |
+| `(i, j)` | pixelCoords | `pixelCoords` | Integer pixel coordinates |
+| `(x_p, y_p)` | normalizedCoords | `normalizedCoords` | Normalized coordinates in [-1, 1] |
+| `r_p` | radialDistance | `radialDistance` | Radial distance from center |
+| `theta_p` | polarAngle | `polarAngle` | Angular position (atan2) |
+| `v_p` | vignetteFactor | `vignetteFactor` | Radial falloff multiplier |
+| `g_p` | geometricFeatureVector | `geometricFeatures` | Complete geometric descriptor |
 
 ---
 
@@ -81,14 +81,14 @@ This document defines the proper variable naming for all 100 equations based on 
 
 | Symbol | Scientific Name | C++ Variable Name | Description |
 |--------|----------------|-------------------|-------------|
-| $\mathbf{z}_{p,t}$ | pixelInputVector | `pixelInputVector` | 6D input vector per pixel |
-| $\tilde{c}_{p,t}^{(r)}$ | modulatedRegime | `modulatedRegime` | Regime with pixel noise |
-| $\tilde{c}_{p,t}^{(v)}$ | modulatedVolatility | `modulatedVolatility` | Volatility with pixel noise |
-| $\tilde{c}_{p,t}^{(\tau)}$ | modulatedTrend | `modulatedTrend` | Trend with spatial modulation |
-| $\tilde{c}_{p,t}^{(\rho)}$ | modulatedRisk | `modulatedRisk` | Risk with spatial modulation |
-| $\xi_{p,t}$ | pixelSignedNoise | `pixelSignedNoise` | Per-pixel signed noise |
-| $\chi_{p,t}$ | pixelUnitHash | `pixelUnitHash` | Per-pixel unit hash output |
-| $m_{p,t}$ | pixelHashInteger | `pixelHashInteger` | Mixed hash integer |
+| `z_p,t` | pixelInputVector | `pixelInputVector` | 6D input vector per pixel |
+| `c_tilde_p,t^(r)` | modulatedRegime | `modulatedRegime` | Regime with pixel noise |
+| `c_tilde_p,t^(v)` | modulatedVolatility | `modulatedVolatility` | Volatility with pixel noise |
+| `c_tilde_p,t^(tau)` | modulatedTrend | `modulatedTrend` | Trend with spatial modulation |
+| `c_tilde_p,t^(rho)` | modulatedRisk | `modulatedRisk` | Risk with spatial modulation |
+| `xi_p,t` | pixelSignedNoise | `pixelSignedNoise` | Per-pixel signed noise |
+| `chi_p,t` | pixelUnitHash | `pixelUnitHash` | Per-pixel unit hash output |
+| `m_p,t` | pixelHashInteger | `pixelHashInteger` | Mixed hash integer |
 
 ---
 
@@ -98,14 +98,14 @@ This document defines the proper variable naming for all 100 equations based on 
 
 | Symbol | Scientific Name | C++ Variable Name | Description |
 |--------|----------------|-------------------|-------------|
-| $\mathbf{h}_{k,p,t}^{(1)}$ | firstLayerPreactivation | `firstLayerPreactivation[k]` | Layer 1 pre-activation |
-| $\mathbf{a}_{k,p,t}^{(1)}$ | firstLayerActivation | `firstLayerActivation[k]` | Layer 1 activation (tanh) |
-| $\mathbf{h}_{k,p,t}^{(2)}$ | secondLayerPreactivation | `secondLayerPreactivation[k]` | Layer 2 pre-activation |
-| $\mathbf{o}_{k,p,t}$ | archetypeOutput | `archetypeOutput[k]` | Archetype color output |
-| $\Phi_k$ | archetypeNeuralMap | `archetypeNeuralMap[k]` | Archetype neural operator |
-| $o_{k,p,t}^{(R)}$ | archetypeOutputRed | `archetypeOutputRed[k]` | Red channel output |
-| $o_{k,p,t}^{(G)}$ | archetypeOutputGreen | `archetypeOutputGreen[k]` | Green channel output |
-| $o_{k,p,t}^{(B)}$ | archetypeOutputBlue | `archetypeOutputBlue[k]` | Blue channel output |
+| `h_k,p,t^(1)` | firstLayerPreactivation | `firstLayerPreactivation[k]` | Layer 1 pre-activation |
+| `a_k,p,t^(1)` | firstLayerActivation | `firstLayerActivation[k]` | Layer 1 activation (tanh) |
+| `h_k,p,t^(2)` | secondLayerPreactivation | `secondLayerPreactivation[k]` | Layer 2 pre-activation |
+| `o_k,p,t` | archetypeOutput | `archetypeOutput[k]` | Archetype color output |
+| `Phi_k` | archetypeNeuralMap | `archetypeNeuralMap[k]` | Archetype neural operator |
+| `o_k,p,t^(R)` | archetypeOutputRed | `archetypeOutputRed[k]` | Red channel output |
+| `o_k,p,t^(G)` | archetypeOutputGreen | `archetypeOutputGreen[k]` | Green channel output |
+| `o_k,p,t^(B)` | archetypeOutputBlue | `archetypeOutputBlue[k]` | Blue channel output |
 
 ---
 
@@ -115,15 +115,15 @@ This document defines the proper variable naming for all 100 equations based on 
 
 | Symbol | Scientific Name | C++ Variable Name | Description |
 |--------|----------------|-------------------|-------------|
-| $\mathbf{q}_t$ | controllerLogits | `controllerLogits` | Raw archetype scores |
-| $q_{k,t}$ | archetypeLogit | `archetypeLogit[k]` | Logit for archetype k |
-| $\boldsymbol{\pi}(t)$ | archetypeWeights | `archetypeWeights` | Softmax archetype weights |
-| $\pi_k(t)$ | archetypeWeight | `archetypeWeight[k]` | Weight for archetype k |
-| $\tau_t$ | softmaxTemperature | `softmaxTemperature` | Temperature parameter |
-| $k_t^\star$ | selectedArchetype | `selectedArchetype` | Dominant archetype index |
-| $H_\pi(t)$ | gatingEntropy | `gatingEntropy` | Shannon entropy of weights |
-| $\operatorname{conf}(t)$ | gatingConfidence | `gatingConfidence` | Selection confidence |
-| $\Delta_\pi(t)$ | gatingTemporalDiff | `gatingTemporalDiff` | L1 change in weights |
+| `q_t` | controllerLogits | `controllerLogits` | Raw archetype scores |
+| `q_k,t` | archetypeLogit | `archetypeLogit[k]` | Logit for archetype k |
+| `pi(t)` | archetypeWeights | `archetypeWeights` | Softmax archetype weights |
+| `pi_k(t)` | archetypeWeight | `archetypeWeight[k]` | Weight for archetype k |
+| `tau_t` | softmaxTemperature | `softmaxTemperature` | Temperature parameter |
+| `k_t*` | selectedArchetype | `selectedArchetype` | Dominant archetype index |
+| `H_pi(t)` | gatingEntropy | `gatingEntropy` | Shannon entropy of weights |
+| `conf(t)` | gatingConfidence | `gatingConfidence` | Selection confidence |
+| `Delta_pi(t)` | gatingTemporalDiff | `gatingTemporalDiff` | L1 change in weights |
 
 ---
 
@@ -133,11 +133,11 @@ This document defines the proper variable naming for all 100 equations based on 
 
 | Symbol | Scientific Name | C++ Variable Name | Description |
 |--------|----------------|-------------------|-------------|
-| $\mathbf{o}_{p,t}$ | blendedOutput | `blendedOutput` | Weighted sum of archetype outputs |
-| $o_{p,t}^{(c)}$ | blendedChannel | `blendedChannel[c]` | Blended color channel c |
-| $\lambda_t$ | mixingLambda | `mixingLambda` | Hard/soft mixing parameter |
-| $\bar{\mathbf{o}}_t$ | frameMeanOutput | `frameMeanOutput` | Frame average color |
-| $\operatorname{Var}_t(\mathbf{o})$ | outputVariance | `outputVariance` | Spatial variance of output |
+| `o_p,t` | blendedOutput | `blendedOutput` | Weighted sum of archetype outputs |
+| `o_p,t^(c)` | blendedChannel | `blendedChannel[c]` | Blended color channel c |
+| `lambda_t` | mixingLambda | `mixingLambda` | Hard/soft mixing parameter |
+| `o_bar_t` | frameMeanOutput | `frameMeanOutput` | Frame average color |
+| `Var_t(o)` | outputVariance | `outputVariance` | Spatial variance of output |
 
 ---
 
@@ -147,13 +147,13 @@ This document defines the proper variable naming for all 100 equations based on 
 
 | Symbol | Scientific Name | C++ Variable Name | Description |
 |--------|----------------|-------------------|-------------|
-| $s_{p,t}$ | stripePattern | `stripePattern` | Diagonal stripe modulation |
-| $R_{p,t}$ | redChannel | `redChannel` | Final red output |
-| $G_{p,t}$ | greenChannel | `greenChannel` | Final green output |
-| $B_{p,t}$ | blueChannel | `blueChannel` | Final blue output |
-| $\mathbf{I}_{p,t}$ | finalColorVector | `finalColorVector` | Complete RGB color |
-| $\mathbf{I}_{p,t}^{(8)}$ | quantizedColor | `quantizedColor` | 8-bit color values |
-| $\mathbf{I}_{p,t}^{\text{PBO}}$ | pboColorBuffer | `pboColorBuffer` | PBO texture data |
+| `s_p,t` | stripePattern | `stripePattern` | Diagonal stripe modulation |
+| `R_p,t` | redChannel | `redChannel` | Final red output |
+| `G_p,t` | greenChannel | `greenChannel` | Final green output |
+| `B_p,t` | blueChannel | `blueChannel` | Final blue output |
+| `I_p,t` | finalColorVector | `finalColorVector` | Complete RGB color |
+| `I_p,t^(8)` | quantizedColor | `quantizedColor` | 8-bit color values |
+| `I_p,t^(PBO)` | pboColorBuffer | `pboColorBuffer` | PBO texture data |
 
 ---
 
